@@ -1,6 +1,11 @@
-﻿namespace UniversityTasksDbFirstApi.ModelExtensions
-{
-    public class Student
+﻿namespace UniversityTasksDbFirstApi.Models { 
+    public partial class Student
     {
+        public string FullName => $"{FirstName} {LastName}";
+
+        public bool HasAcademicEmail()
+        {
+            return Email.EndsWith("@students.example.edu", StringComparison.OrdinalIgnoreCase);
+        }
     }
 }
